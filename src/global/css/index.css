@@ -1,3 +1,4 @@
+/* 设置全局样式 */
 * {
     margin: 0;
     padding: 0;
@@ -5,4 +6,7 @@
 a,ul,li,ol {
     list-style: none;
     text-decoration: none;
+}
+input {
+    outline: none;
 }

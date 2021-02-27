@@ -1,18 +1,18 @@
 export default [
     {
-        name: "我的作品",
+        name: "交流群",
         icon: ""
     },
     {
-        name: "数据中心",
+        name: "中文文档",
         icon: ""
     },
     {
-        name: "模板中心",
+        name: "Gitee",
         icon: ""
     },
     {
-        name: "账号中心",
+        name: "Github",
         icon: ""
     },
 ]
