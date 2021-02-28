@@ -5,10 +5,12 @@
             v-for= "item in data"
             :key= "item.index"
             :index= "item.index"
+            @click.native="jump(item)"
             >
                 <template slot="title">
                     <i :class="item.icon"></i>
-                    {{ item.name }}</template>
+                    {{ item.name }}
+                </template>
                 <el-menu-item-group v-show="item.child">
                     <el-menu-item 
                     v-for=" child in item.child"
@@ -30,6 +32,13 @@ export default {
     data(){
         return {
             data: mainer
+        }
+    },
+    methods: {
+        jump(item) {
+            console.log(item);
+            if(item.component)
+                this.$emit('changeRouter', item.component)
         }
     }
 }

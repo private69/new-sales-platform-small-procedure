@@ -46,3 +46,25 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
      `${host}${url}`
 
+目录结构：
+
+```
+src
+|————assets 				// 静态资源(图片、视频等)
+|————components				// 组件资源
+|	|————assets				// 外部静态文件资源
+|	|————base				// 
+|	|————common				// 公共组件管理(局部组件、方法)
+|	|	|————public			// 全局组件
+|	|————views				// 页面管理
+|	|	|————header			// 头部样式 (公用)
+|	|	|————mainer			// 侧边栏内容(公用)
+|————global					// 全局资源
+|————plugins				// 插件引入
+|————router					// 路由管理
+|————services				// 请求服务
+|————ABOUT.md				// 关于 文档
+|————App.vue				// 入口组件
+|————main.js				// 项目入口文件
+```
+
