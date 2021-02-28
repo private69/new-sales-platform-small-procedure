@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import home from '@/components/views/home'
 import colorPicker from '@/components/common/colorProcess'
 import check from '@/components/views/checkDo/check'
+import aboutHTML from '@/components/views/aboutHTML/index.vue'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/hello',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: "/aboutHTML",
+      name: "查看html相关元素",
+      component: aboutHTML
     }
   ]
 })

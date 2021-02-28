@@ -26,15 +26,17 @@ export default {
     mounted(){
         this.text = this.colorText
     },
-    getColor(){
-        let colorValue = this.colorCode
-        // 文本长度处理颜色
-        if(colorValue.length < 6) colorValue = handleColorCode(colorValue)
-        else colorValue = colorValue.slice(0,6)
-        this.$refs.t.style.color = `#${colorValue}`
-        console.log(colorValue);
-        this.colorCode = ""
-    },
+    methods: {
+        getColor(){
+            let colorValue = this.colorCode
+            // 文本长度处理颜色
+            if(colorValue.length < 6) colorValue = handleColorCode(colorValue)
+            else colorValue = colorValue.slice(0,6)
+            this.$refs.t.style.color = `#${colorValue}`
+            console.log(colorValue);
+            this.colorCode = ""
+        }
+    }
 }
 </script>
 <style scoped>

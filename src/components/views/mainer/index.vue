@@ -1,44 +1,31 @@
 <template>
     <div>
-        <el-menu>
-            <el-submenu 
-            v-for= "item in data"
-            :key= "item.index"
-            :index= "item.index"
-            @click.native="jump(item)"
-            >
-                <template slot="title">
-                    <i :class="item.icon"></i>
-                    {{ item.name }}
-                </template>
-                <el-menu-item-group v-show="item.child">
-                    <el-menu-item 
-                    v-for=" child in item.child"
-                    :key= "child.index"
-                    :index= "child.index"
-                    >
-                        <i v-if="child.icon" :class="child.icon"></i>
-                        {{child.name}}
-                    </el-menu-item>
-                </el-menu-item-group>
-            </el-submenu>
-        </el-menu>
+        <menus 
+        :list= "data"
+        :keyWords= "keyWords"
+        @changeRouter= "changeRouter"
+        />
     </div>
 </template>
 <script>
 import mainer from './index.js'
+import menus from '@/components/common/elMenu.vue'
 export default {
     name: "mainer",
     data(){
         return {
-            data: mainer
+            data: mainer,
+            keyWords: "push" // 关键字：跳转路由
         }
     },
+    components: {
+        menus
+    },
     methods: {
-        jump(item) {
-            console.log(item);
-            if(item.component)
-                this.$emit('changeRouter', item.component)
+        changeRouter(path){
+            console.log(path);
+            // this.$emit('changeRouter', path)
+            this.$router.push(path)
         }
     }
 }

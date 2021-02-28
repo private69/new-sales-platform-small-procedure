@@ -4,13 +4,13 @@ export default [
         index: "1",
         name: "我的作品",
         icon: "el-icon-user-solid",
-        component: ""
+        path: "/check"
     },
     {
         index: "2",
         name: "数据中心",
         icon: "el-icon-s-order",
-        component: "",
+        path: "/color",
         child:[
             {
                 index: "2-1",
@@ -23,7 +23,7 @@ export default [
         index: "3",
         name: "模板中心",
         icon: "el-icon-s-release",
-        component: "colorProcess",
+        path: "/check",
         child: [
             {
                 index: "3-1",
@@ -36,6 +36,12 @@ export default [
         index: "4",
         name: "账号中心",
         icon: "el-icon-s-home",
-        component: ""
+        path: "/color"
     },
+    {
+        index: "5",
+        name: "关于HTML",
+        icon: "el-icon-s-home",
+        path: "/aboutHtml"
+    }
 ]
