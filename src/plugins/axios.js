@@ -6,6 +6,7 @@ const host = process.VUE_APP_BASE_API; // test
 
 let request = ({ url, headers, data, method = 'POST' }) => {
   if (!url) throw Error('url必须');
+  console.log(url);
   return new Promise((resolve, reject) => {
     axios({
       // url: `${host}/${url}`,

@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-form ref="form" :model="form" label-width="80px">
-            <el-form-item label="活动名称">
+            <!-- <el-form-item label="活动名称">
                 <el-input v-model="form.name"></el-input>
             </el-form-item>
             <el-form-item label="活动区域">
@@ -45,7 +45,7 @@
                 <el-radio label="POST">POST</el-radio>
             </el-radio-group>
             <hr>
-            <br>
+            <br> -->
             <el-form-item>
                 <el-button type="primary" @click="onSubmit(true)">立即创建(携带参数)</el-button>
                 <el-button type="primary" @click="onSubmit(false)">立即创建(无参)</el-button>
@@ -55,6 +55,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 import {get , post} from '@/services/request.js' 
 export default {
     name: "check",
@@ -84,6 +85,11 @@ export default {
                 console.log("error" , error);
             })
         }
+    },
+    created(){
+        axios.get({
+            url: "http://localhost:8080/check"
+        })
     }
 }
 </script>

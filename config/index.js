@@ -1,7 +1,7 @@
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
-
+const HOST = require('../IPaddress')
 const path = require('path')
 
 module.exports = {
@@ -15,7 +15,8 @@ module.exports = {
     // Various Dev Server settings
     // host: '192.168.10.223', // can be overwritten by process.env.HOST
     // host: '192.168.1.4', // can be overwritten by process.env.HOST
-    host: '192.168.3.35', // can be overwritten by process.env.HOST
+    // host: '192.168.3.35', // can be overwritten by process.env.HOST
+    host: HOST || process.env.HOST, // can be overwritten by process.env.HOST
     port: 11111, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,

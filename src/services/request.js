@@ -4,7 +4,7 @@ export function get(data){
     // get 方法传参错误
     return request({
         // url: `/checkGet.do`,
-        url: `/localhost`,
+        url: `http://localhost:8080/check`,
         methods: "GET",
         data
     })
@@ -13,7 +13,7 @@ export function get(data){
 export function post(data){
     return request({
         // url: `/checkPost.do`,
-        url: `/localhost`,
+        url: `http://localhost:8080/check`,
         methods: "POST",
         data
     })
