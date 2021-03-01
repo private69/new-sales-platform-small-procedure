@@ -8,7 +8,9 @@ let request = ({ url, headers, data, method = 'POST' }) => {
   if (!url) throw Error('url必须');
   return new Promise((resolve, reject) => {
     axios({
-      url: `${host}/${url}`,
+      // url: `${host}/${url}`,
+      // url: `${host}${url}`,
+      url: `${url}`,
       data,
       headers,
       params: method.toLowerCase() === 'get' ? data : null,

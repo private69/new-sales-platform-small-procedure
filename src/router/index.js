@@ -34,6 +34,10 @@ export default new Router({
       path: "/aboutHTML",
       name: "查看html相关元素",
       component: aboutHTML
+    },{
+      path: "/browse",
+      name: "浏览作品",
+      component: () => import ('@/components/views/browse/index.vue')
     }
   ]
 })

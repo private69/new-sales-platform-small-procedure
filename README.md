@@ -280,3 +280,18 @@ http {
      1. `git config core.autocrlf false`（仅对当前 git 仓库有效）
      2. `git config --global core.autocrlf false` ( 全局有效）
 
+2. `default value for prop "list": Props with type Object/Array must use a factory function to return the default value.`
+
+   - 问题：props default 数组／对象的默认值应当由一个工厂函数返回
+
+   - 解决：
+
+     > list : {
+     >
+     > ​	type : Array , 
+     >
+     > ​	default: () => []
+     >
+     > }
+
+3. 

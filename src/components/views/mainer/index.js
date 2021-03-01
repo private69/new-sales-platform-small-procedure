@@ -4,7 +4,7 @@ export default [
         index: "1",
         name: "我的作品",
         icon: "el-icon-user-solid",
-        path: "/check"
+        path: "/browse"
     },
     {
         index: "2",
