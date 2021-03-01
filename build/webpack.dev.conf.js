@@ -42,7 +42,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
+    disableHostCheck: true,// 解决域名访问本地运行地址时出现Invalid Host header的问题
   },
   plugins: [
     new webpack.DefinePlugin({

@@ -9,7 +9,6 @@
 </template>
 <script>
 import mainer from './index.js'
-import menus from '@/components/common/elMenu.vue'
 export default {
     name: "mainer",
     data(){
@@ -19,7 +18,6 @@ export default {
         }
     },
     components: {
-        menus
     },
     methods: {
         changeRouter(path){

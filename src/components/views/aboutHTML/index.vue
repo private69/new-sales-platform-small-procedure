@@ -7,12 +7,10 @@
     </div>
 </template>
 <script>
-import menus from '@/components/common/elMenu.vue'
 import list from './index.js'
 export default {
     name: "aboutHTML",
     components: {
-        menus
     },
     data(){
         return {
