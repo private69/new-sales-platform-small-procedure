@@ -279,6 +279,86 @@ http {
 
    访问该地址即可
 
+## 项目详情：
+
+管理系统：
+
+>  [人力资源管理系统](http://vhr.javaboy.org)
+>
+> **https://github.com/lenve/vhr**
+>
+> 
+>
+> [电商后台管理系统](http://www.macrozheng.com/admin/#/home)（账号：admin，密码：macro123）
+>
+> **https://github.com/macrozheng/mall-admin-web**
+>
+> 
+>
+> [XMall商城](http://xmadmin.exrick.cn/)
+>
+> [XMall后台管理系统](http://xmadmin.exrick.cn/)
+>
+> **https://github.com/Exrick/xmall-front**
+>
+> 
+>
+> [商城框架系统](https://demo.careyshop.cn/admin/#/login)（账号：admin43，密码：admin888）
+>
+> **https://github.com/dnyz520/careyshop-admin**
+>
+> 
+>
+> 
+
+交流社区：
+
+> [新蜂商城](https://juejin.cn/)
+>
+> **https://github.com/newbee-ltd/newbee-mall**
+>
+> 
+>
+> 
+>
+> 
+
+可视化工具：
+
+> 低代码平台
+>
+> 
+>
+>  [可视化布局](https://jaweii.github.io/Vue-Layout/dist/#/share/5993d3b05c497d0057c6f2da)
+>
+> 
+>
+> [可视化表单设计器](http://form.making.link/sample/#/zh-CN/)
+>
+> **https://github.com/GavinZhuLei/vue-form-making**
+
+其它：
+
+> [海风小店](http://hiolabs.com/demo/#/dashboard/welcome)（账号：`hiolabs`，密码：`hiolabs`）
+>
+> **https://github.com/iamdarcy/hioshop-admin**
+>
+> 
+>
+> [vue-admin-beautiful](http://vue-admin-beautiful.com/vue-admin-beautiful-element/?hmsr=github&hmpl=&hmcu=&hmkw=&hmci=)
+>
+> **https://github.com/chuzhixin/vue-admin-beautiful?utm_source=gold_browser_extension**
+>
+> 
+>
+> 在线文档编辑器
+>
+> 
+>
+> vue源码逐行注释分析+40多m的vue源码程序流程图思维导图 
+>
+> **https://github.com/qq281113270/vue**
+
 ## 常见问题：
 
 1. git 提交时报`LF will be replaced by CRLF in`

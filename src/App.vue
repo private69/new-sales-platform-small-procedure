@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import HeaderCpm from '@/components/views/header/index.vue'
-import mainer from '@/components/views/mainer/index.vue'
+import HeaderCpm from '@/views/header/index.vue'
+import mainer from '@/views/mainer/index.vue'
 export default {
   name: 'App',
   components: {
