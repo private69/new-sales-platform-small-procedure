@@ -13,7 +13,7 @@
         v-for="(item ,index ) in list"
         :key= "index"
         closable
-        :type= "item.type || 'info'"
+        :type= "item.path == $route.path?'primary':'info'"
         @close= "closeTags(index)"
         @click.native = "handleClick(item)"
         >

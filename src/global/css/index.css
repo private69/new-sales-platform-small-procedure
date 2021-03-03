@@ -1,17 +1,6 @@
 /* 设置全局样式 */
-* {
-    margin: 0;
-    padding: 0;
-}
-a,ul,li,ol {
-    list-style: none;
-    text-decoration: none;
-}
-input {
-    outline: none;
-}
-.el-global__tags {
-    width: 100%;
-    text-align: left;
-    margin-bottom: 10px;
-}
+* {margin: 0;padding: 0;}
+a,ul,li,ol {list-style: none;text-decoration: none;}
+input {outline: none;}
+header .el-header {padding: 0;margin: 0;} /* 取消容器默认样式 */
+.el-global__tags {width: 100%;text-align: left;margin-bottom: 2vh;}

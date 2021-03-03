@@ -60,9 +60,9 @@ src
 |	|————base				// 
 |	|————common				// 公共组件管理(局部组件、方法)
 |	|	|————public			// 全局组件
-|	|————views				// 页面管理
-|	|	|————header			// 头部样式 (公用)
-|	|	|————mainer			// 侧边栏内容(公用)
+|————views					// 页面管理
+|	|————header				// 头部样式 (公用)
+|	|————mainer				// 侧边栏内容(公用)
 |————global					// 全局资源
 |————plugins				// 插件引入
 |————router					// 路由管理
@@ -283,7 +283,7 @@ http {
 
 管理系统：
 
->  [人力资源管理系统](http://vhr.javaboy.org)
+> [人力资源管理系统](http://vhr.javaboy.org)
 >
 > **https://github.com/lenve/vhr**
 >
@@ -297,7 +297,7 @@ http {
 >
 > [XMall商城](http://xmadmin.exrick.cn/)
 >
-> [XMall后台管理系统](http://xmadmin.exrick.cn/)
+> [XMall后台管理系统](http://xmadmin.exrick.cn/)（账号：test，密码：test）
 >
 > **https://github.com/Exrick/xmall-front**
 >
@@ -306,6 +306,24 @@ http {
 > [商城框架系统](https://demo.careyshop.cn/admin/#/login)（账号：admin43，密码：admin888）
 >
 > **https://github.com/dnyz520/careyshop-admin**
+>
+> 
+>
+> 小爱admin后台管理系统（账号：admin/editor，密码：123456/123456）
+>
+> **https://github.com/wdlhao/vue2-element-touzi-admin.git**
+>
+> 
+>
+> [后台管理系统](https://el-admin.xin/components/echarts)
+>
+> **https://github.com/elunez/eladmin-web.git**
+>
+> 
+>
+> [nx-admin](https://sdsdsy.gitee.io/nxadmin/#/dashboard/dashboard)
+>
+> **https://github.com/mgbq/nx-admin.git**
 >
 > 
 >
@@ -329,7 +347,7 @@ http {
 >
 > 
 >
->  [可视化布局](https://jaweii.github.io/Vue-Layout/dist/#/share/5993d3b05c497d0057c6f2da)
+> [可视化布局](https://jaweii.github.io/Vue-Layout/dist/#/share/5993d3b05c497d0057c6f2da)
 >
 > 
 >

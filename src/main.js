@@ -5,9 +5,11 @@ import '@/global/css/index.css';
 import '@/plugins/elementUI'
 import '@/plugins/install'
 import store from './store'
+import '@/plugins/echarts'
+
+import bus from './global/js/bus'
 
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

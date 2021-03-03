@@ -1,5 +1,9 @@
 <template>
     <div>
+        <Basecharts 
+        width="50vw"
+        height="30vh"
+        />
         <menus 
         :list= "list"
         :keywords="keywords"

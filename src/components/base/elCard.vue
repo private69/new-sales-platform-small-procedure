@@ -42,9 +42,9 @@ export default {
 </script>
 <style scoped>
 .el-card__img {
-    width: 140px;
-    height: 180px;
-    margin-bottom: 10px;
+    width: 17vw;
+    height: 30vh;
+    margin-bottom: 3vh;
     border: 1px solid #999;
 }
 .el-card__time{
