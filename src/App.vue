@@ -11,8 +11,20 @@
                         <mainer @changeRouter="changeRouter"/>
                     </el-aside>
                     <el-main>
+                      <el-container>
+                        <el-header>
+                          <div class="el-global__tags" v-if="$store.state.tagsList">
+                              <Eltags 
+                              @changeRouter= "changeRouter"
+                              :list = "$store.state.tagsList"
+                              />
+                          </div>
+                        </el-header>
+                        <el-main>
+                          <router-view />
+                        </el-main>
+                      </el-container>
                         <!-- <component :is="component" /> -->
-                        <router-view />
                     </el-main>
                 </el-container>
             </el-main>
@@ -33,7 +45,9 @@ export default {
   },
   methods: {
       changeRouter(path){
-          this.$router.push(path)
+        console.log(this.$route.path);
+        if(this.$route.path === path) return ;
+        this.$router.push(path)
       }
       
   }
@@ -49,5 +63,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   /* margin-top: 60px; */
+}
+.el-main {
+  padding: 0;
+  margin: 0;
 }
 </style>

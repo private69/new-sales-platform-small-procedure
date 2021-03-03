@@ -42,6 +42,7 @@ export default {
     methods: {
         // 增加行为
         action(item){
+            this.$emit('pushInStore', item)
             if(this.keyWords == "push") this.jump(item);
         },
         jump(item) {

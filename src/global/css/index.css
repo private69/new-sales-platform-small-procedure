@@ -10,3 +10,8 @@ a,ul,li,ol {
 input {
     outline: none;
 }
+.el-global__tags {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}

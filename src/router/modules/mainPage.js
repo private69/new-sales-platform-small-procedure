@@ -1,5 +1,10 @@
 // 主页路由
-module.exports = [
+import HelloWorld from '@/components/HelloWorld'
+import home from '@/views/home'
+import colorPicker from '@/components/common/colorProcess'
+import check from '@/views/checkDo/check'
+import aboutHTML from '@/views/aboutHTML/index.vue'
+export default [
     {
       path: "/",
       name: "主页",
@@ -27,6 +32,6 @@ module.exports = [
     },{
       path: "/browse",
       name: "浏览作品",
-      component: () => import ('@/components/views/browse/index.vue')
+      component: () => import ('@/views/browse/index.vue')
     }
   ]

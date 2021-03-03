@@ -17,7 +17,8 @@ export default {
             list: list,
             keywords: "push" // 查看html 的标签解释
         }
-    }
+    },
+    mounted(){}
 }
 </script>
 <style scoped>

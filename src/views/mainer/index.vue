@@ -4,6 +4,7 @@
         :list= "data"
         :keyWords= "keyWords"
         @changeRouter= "changeRouter"
+        @pushInStore= "pushInStore"
         />
     </div>
 </template>
@@ -24,6 +25,9 @@ export default {
             console.log(path);
             // this.$emit('changeRouter', path)
             this.$router.push(path)
+        },
+        pushInStore(item){
+            this.$store.state.tagsList.push(item)
         }
     }
 }
