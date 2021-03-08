@@ -1,6 +1,12 @@
 <template>
     <div>
-        <el-menu>
+        <el-menu
+        :background-color="backgroundColor"
+        :text-color="textColor"
+        :active-text-color="activeColor"
+        :collapse="$store.state.folder"
+        class="el-menu-vertical-demo"
+        >
             <el-submenu 
             v-for= "(item , index) in list"
             :key= "index"
@@ -9,7 +15,7 @@
             >
                 <template slot="title">
                     <i v-if="item.icon" :class="item.icon"></i>
-                    {{ item.name }}
+                    <span slot="title">{{ item.name }}</span>
                 </template>
                 <el-menu-item-group v-show="item.child">
                     <el-menu-item 
@@ -18,7 +24,7 @@
                     :index= "child.index || (index + 1  + '-' + index + 1)"
                     >
                         <i v-if="child.icon" :class="child.icon"></i>
-                        {{child.name}}
+                        <span slot="title">{{ child.name }}</span>
                     </el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
@@ -37,6 +43,18 @@ export default {
         keyWords: {
             type: String,
             default: ''
+        },
+        backgroundColor: {
+            type: String,
+            default: "#FFF"
+        },
+        textColor: {
+            type: String,
+            default: "#000"
+        },
+        activeColor: {
+            type: String,
+            default: "#CCC"
         }
     },
     methods: {
@@ -55,6 +73,14 @@ export default {
 }
 </script>
 <style scoped>
-
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 300px;
+    /* min-height: 400px; */
+}
+.el-menu-vertical-demo{
+    height: 100vh;
+    width: 60px;
+    background-color: #232323;
+}
 </style>
 

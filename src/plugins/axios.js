@@ -1,6 +1,7 @@
 import axios from 'axios';
 // 保证先设置相应的 url 
 import '@/services/requestApi'
+
 console.log("aa",process);
 const host = process.VUE_APP_BASE_API; // test
 

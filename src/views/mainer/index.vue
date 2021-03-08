@@ -5,6 +5,9 @@
         :keyWords= "keyWords"
         @changeRouter= "changeRouter"
         @pushInStore= "pushInStore"
+        backgroundColor= "#232323"
+        textColor= "#dedede"
+        activeColor= "#00ff00"
         />
     </div>
 </template>

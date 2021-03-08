@@ -7,6 +7,7 @@
         <menus 
         :list= "list"
         :keywords="keywords"
+        style="text-align:left;width:20vw;"
         />
     </div>
 </template>

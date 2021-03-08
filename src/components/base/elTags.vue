@@ -13,10 +13,12 @@
         v-for="(item ,index ) in list"
         :key= "index"
         closable
-        :type= "item.path == $route.path?'primary':'info'"
+        :type= "item.path !== $route.path?'info':'primary'"
         @close= "closeTags(index)"
         @click.native = "handleClick(item)"
+        hit
         >
+        <i v-if="item.path == $route.path" class="el-icon-mouse"></i>
         {{ item.name }}
         </el-tag>
     </div>
@@ -47,7 +49,10 @@ export default {
     },
     methods: {
         closeTags(index) {
+            let NowPath = this.$store.state.tagsList[index].path
             this.$store.state.tagsList.splice(index,1);
+            // 关闭当前活跃的页面时，返回主页面
+            if(this.$route.path === NowPath) this.$router.replace('/browse')
         },
         // 数据排重
         clearRepeat(newVal){

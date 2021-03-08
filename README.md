@@ -96,6 +96,14 @@ src
 
 6. 可将图片转换为相应页面文件
 
+7. 动态添加组件用于展示效果
+
+8. 页面细节：
+
+   - 记录点击历史的功能可添加：返回、前进按钮，并且将此区域独立样式
+   - 顶部导航栏可记录：当前页面的分支情况
+   - 可添加全局抽屉（个人设置、页面设置）
+
 #### 全局组件：（base）
 
 ```
@@ -116,6 +124,25 @@ src
   > `internal为false`
   >
   > `netmask 为 255.255.255.255`
+
+## 服务器：
+
+服务器采用 nodeJs 自带的服务器 `koa`，用于跳转路由，
+
+并将数据转换为 json文件存储
+
+（页面名称为文件名，存放内容：标签名、标签属性、位置信息、层叠位置、页面类型），
+
+（可将该 json 文件解析为 html 文件 或者 .vue 文件）
+
+koa安装（**[文档](https://koa.bootcss.com/)**）：
+
+```
+npm install koa
+node my-koa-app.js
+```
+
+
 
 ## Nginx：
 
@@ -324,22 +351,12 @@ http {
 > [nx-admin](https://sdsdsy.gitee.io/nxadmin/#/dashboard/dashboard)
 >
 > **https://github.com/mgbq/nx-admin.git**
->
-> 
->
-> 
 
 交流社区：
 
 > [新蜂商城](https://juejin.cn/)
 >
 > **https://github.com/newbee-ltd/newbee-mall**
->
-> 
->
-> 
->
-> 
 
 可视化工具：
 

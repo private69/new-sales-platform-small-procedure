@@ -1,7 +1,6 @@
 <template>
     <div>
-        <Elcard :list = "list"/>
-        <p class="aa"></p>
+        <Elcard :list = "list" v-if="list.length"/>
     </div>
 </template>
 <script>
@@ -17,8 +16,6 @@ export default {
         console.log(this.list);
     },
     mounted(){
-        // 测试文档对象
-        console.log(document.getElementsByClassName("aa")[0]);
     }
 }
 </script>

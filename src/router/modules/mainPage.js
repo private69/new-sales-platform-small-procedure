@@ -4,10 +4,16 @@ import home from '@/views/home'
 import colorPicker from '@/components/common/colorProcess'
 import check from '@/views/checkDo/check'
 import aboutHTML from '@/views/aboutHTML/index.vue'
+import login from '@/views/login/index.vue'
 export default [
     {
       path: "/",
       name: "主页",
+      component: login
+    },
+    {
+      path: '/home',
+      name: '主页',
       component: home
     },
     {
