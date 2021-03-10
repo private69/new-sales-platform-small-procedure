@@ -31,7 +31,7 @@
                     suffix-icon="el-icon-unlock"/>
                 </el-form-item>
                 <el-form-item>
-                    <el-button @click="logging">登录</el-button>
+                    <el-button @click="logging()">登录</el-button>
                 </el-form-item>
             </el-form>
         </el-card>
@@ -60,13 +60,13 @@ export default {
     methods: {
         logging(){
             this.$store.state.login = true
-            this.$router.push('/browse')
+            this.$router.replace('/browse')
         }
     },
     created(){
     },
     mounted(){
-        this.$store.state.login = false
+        // this.$store.state.login = false
     }
 }
 </script>
