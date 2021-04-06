@@ -1,425 +1,138 @@
-# new-sales-platform-small-procedure
+<h2 align="center">
+ DESIGN PORTAL
+</h2>
 
-> this is a demo with visual implement to create H5's page 
+----
 
-## Build Setup
+## 简介
+类似凡科微传单、易企秀、MAKA的可视化H5编辑器(基于Vue2，使用VueCli3.0搭建)
 
-``` bash
-# install dependencies
-npm install
+## 预览地址
+[www.designportal.cn](http://www.designportal.cn)
 
-# serve with hot reload at localhost:8080
-npm run dev
+## 配套设施
+- [服务端](https://github.com/DESIGN-PORTAL/DESIGNPORTAL-BE)
+- [预览页](https://github.com/DESIGN-PORTAL/DESIGNPORTAL-VIEWER)
 
-# build for production with minification
-npm run build
+## 开发者文档
+- [编辑器迁移指南](./guides/编辑器迁移指南.md)
+- [编辑器组件开发指南](./guides/编辑器组件开发指南.md)
 
-# build for production and view the bundle analyzer report
-npm run build --report
+## TODO
+  + [ ] 组件组合功能
+  + [ ] 动画功能
+  + [ ] 图片裁剪
+
+----
+## 目录结构
+```
+.
+├── src
+│   ├── api
+│   │   └── axios.js                      // axios请求封装
+│   ├── assets
+│   │   ├── css                           // css代码
+│   │   ├── iconfont                      // iconfont 字体图标
+│   ├── components
+│   │   ├── advanceForm.vue               // 高阶表单组件
+│   │   ├── advanceTable.vue              // 高阶表格组件
+│   │   ├── base                          // 基础组件
+│   │   ├── editor                        // 编辑器组件
+│   │   ├── global                        // 挂载到Vue原型上的组件/插件
+│   │   ├── table                         // 表格组件
+│   ├── pages
+│   │   ├── Editor.vue                    // 编辑器路由页
+│   │   ├── Manage                        // 管理页面
+│   ├── services                          // 接口
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+修改内容：
 
+- [ ] 预览页面使用饿了么重写
 
+- [ ] 添加账户信息编辑页面
 
-### check.vue:
+- [ ] 添加色调更改功能
 
-`axios`方法封装：`@/plugins/axios.js`
+- [ ] 侧边栏内容更改
 
-请求方法封装：`@/services/request.js`
+- [ ] 更改页面——关于项目（`/manage/about`）
 
-> 检验接口是否生效：
->
-> 
->
-> 接口：`http://localhost:8080/aaa//checkPost.do`
+- [ ] 引入Echarts库
 
-注：
+- [ ] 新增图表（直方图）
 
-- 如需要接口`http://localhost:8080/aaa/checkPost.do`
+- [ ] 新增图表（饼图）
 
-  1. 转至项目文件`src\plugins\axios.js`
+- [ ] 新增图表（动态排序柱状图）
 
-  2. `${host}/${url}` 
+- [ ] 新增图表（直方图）
 
-     修改为
+- [ ] 添加回到顶部功能
 
-     `${host}${url}`
+- [ ] 增加对话框（保存、退出）
 
-目录结构：
+- [ ] 使用node搭建服务器
 
-```
-demoPetSc					// 文档相关截图
-```
+- [ ] 本地服务器匹配数据 [ '/api/project/list' , ‘GET’ , 'page:number' , 'limit:number' ]
 
-```
-src
-|————assets 				// 静态资源(图片、视频等)
-|————components				// 组件资源
-|	|————assets				// 外部静态文件资源
-|	|————base				// 
-|	|————common				// 公共组件管理(局部组件、方法)
-|	|	|————public			// 全局组件
-|————views					// 页面管理
-|	|————header				// 头部样式 (公用)
-|	|————mainer				// 侧边栏内容(公用)
-|————global					// 全局资源
-|————plugins				// 插件引入
-|————router					// 路由管理
-|————services				// 请求服务
-|————ABOUT.md				// 关于 文档
-|————App.vue				// 入口组件
-|————main.js				// 项目入口文件
-```
+  {
+  	list: [ { id，coverImg，createAt，createUser，name，updateAt } ]
 
-## 前端：
+  ​	total
 
-#### 主要功能：
+  }
 
-1. 利用组件搭建页面
+- [ ] 获取本地列表 [ 
+  '/api/file/list' , 'POST' , 
 
-   | 组件实例                               |
-   | -------------------------------------- |
-   | 表格 （可设置规则-行、列）             |
-   | 图表（饼图、直方图等）                 |
-   | 文段格式（空格、粗细、字体样式、字号） |
-   | 轮播图                                 |
-   | 背景图                                 |
+  'classification:number' , 
 
-2. 利用 html 原生标签/饿了么组件 组成页面
+  'limit:number' , 
 
-3. 拖拽功能
+  'name:string' , 
 
-4. 画布用于展示页面的实时编辑的样式效果
+  'page:number' ,
 
-5. 可生成图片用于查看效果
+  'queryType:number' ,
 
-6. 可将图片转换为相应页面文件
+  'type:number'
 
-7. 动态添加组件用于展示效果
+  ] 
 
-8. 页面细节：
+- [ ] 保存新建的页面[
 
-   - 记录点击历史的功能可添加：返回、前进按钮，并且将此区域独立样式
-   - 顶部导航栏可记录：当前页面的分支情况
-   - 可添加全局抽屉（个人设置、页面设置）
+  '/api/project/save' , 'POST' , 
 
-#### 全局组件：（base）
+  fontList: [] ,
 
-```
-<elMenu /> // 列表
-<elCard /> // 卡片列表
-```
+  music: { name , url , loop: boolean} ,
 
-#### 配置为当前计算机IP地址与默认端口：
+  pages: [{
 
-- 通过node 的`os`模块获取当前计算机的连接信息
+  ​	bg: { url ,x ,y ,height ,naturalHeight ,naturalWidth ,opacity ,url ,width} ,
 
-- 筛选获取到的数据（以下为筛选规则）
+  ​	coverImg , height , id , type , width , 
 
-  > `Ipv4 簇 -- family`
-  >
-  > `地址不为127.0.0.1`
-  >
-  > `internal为false`
-  >
-  > `netmask 为 255.255.255.255`
-
-## 服务器：
-
-服务器采用 nodeJs 自带的服务器 `koa`，用于跳转路由，
-
-并将数据转换为 json文件存储
-
-（页面名称为文件名，存放内容：标签名、标签属性、位置信息、层叠位置、页面类型），
-
-（可将该 json 文件解析为 html 文件 或者 .vue 文件）
-
-koa安装（**[文档](https://koa.bootcss.com/)**）：
-
-```
-npm install koa
-node my-koa-app.js
-```
-
-
-
-## Nginx：
-
-#### 文件结构：
-
-```
-...              #全局块
-
-events {         #events块
-   ...
-}
+  ​	layers: [{
 
-http      #http块
-{
-    ...   #http全局块
-    server        #server块
-    { 
-        ...       #server全局块
-        location [PATTERN]   #location块
-        {
-            ...
-        }
-        location [PATTERN] 
-        {
-            ...
-        }
-    }
-    server
-    {
-      ...
-    }
-    ...     #http全局块
-}
-```
+  ​		borderRadius ,height ,hide ,id ,img ,layerName ,left,
 
-1、**全局块**：配置影响nginx全局的指令。一般有运行nginx服务器的用户组，nginx进程pid存放路径，日志存放路径，配置文件引入，允许生成worker process数等。
+  ​		lock ,opacity ,rotate ,top ,type ,width
 
-2、**events块**：配置影响nginx服务器或与用户的网络连接。有每个进程的最大连接数，选取哪种事件驱动模型处理连接请求，是否允许同时接受多个网路连接，开启多个网络连接序列化等。
+  ​	}]
 
-3、**http块**：可以嵌套多个server，配置代理，缓存，日志定义等绝大多数功能和第三方模块的配置。如文件引入，mime-type定义，日志自定义，是否使用sendfile传输文件，连接超时时间，单连接请求数等。
+  }]
 
-4、**server块**：配置虚拟主机的相关参数，一个http中可以有多个server。
+  share: { description , image , title } ,
 
-5、**location块**：配置请求的路由，以及各种页面的处理情况。
+  directory ,
 
-#### 配置文件示例：
+  id ,
 
-```.conf
-########### 每个指令必须有分号结束。#################
-#user administrator administrators;  #配置用户或者组，默认为nobody nobody。
-#worker_processes 2;  #允许生成的进程数，默认为1
-#pid /nginx/pid/nginx.pid;   #指定nginx进程运行文件存放地址
-error_log log/error.log debug;  #制定日志路径，级别。这个设置可以放入全局块，http块，server块，级别以此为：debug|info|notice|warn|error|crit|alert|emerg
-events {
-    accept_mutex on;   #设置网路连接序列化，防止惊群现象发生，默认为on
-    multi_accept on;  #设置一个进程是否同时接受多个网络连接，默认为off
-    #use epoll;      #事件驱动模型，select|poll|kqueue|epoll|resig|/dev/poll|eventport
-    worker_connections  1024;    #最大连接数，默认为512
-}
-http {
-    include       mime.types;   #文件扩展名与文件类型映射表
-    default_type  application/octet-stream; #默认文件类型，默认为text/plain
-    #access_log off; #取消服务日志    
-    log_format myFormat '$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for'; #自定义格式
-    access_log log/access.log myFormat;  #combined为日志格式的默认值
-    sendfile on;   #允许sendfile方式传输文件，默认为off，可以在http块，server块，location块。
-    sendfile_max_chunk 100k;  #每个进程每次调用传输数量不能大于设定的值，默认为0，即不设上限。
-    keepalive_timeout 65;  #连接超时时间，默认为75s，可以在http，server，location块。
+  name
 
-    upstream mysvr {   
-      server 127.0.0.1:7878;
-      server 192.168.10.121:3333 backup;  #热备
-    }
-    error_page 404 https://www.baidu.com; #错误页
-    server {
-        keepalive_requests 120; #单连接请求上限次数。
-        listen       4545;   #监听端口
-        server_name  127.0.0.1;   #监听地址       
-        location  ~*^.+$ {       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。
-           #root path;  #根目录
-           #index vv.txt;  #设置默认页
-           proxy_pass  http://mysvr;  #请求转向mysvr 定义的服务器列表
-           deny 127.0.0.1;  #拒绝的ip
-           allow 172.18.5.54; #允许的ip           
-        } 
-    }
-}
-```
+  ]
 
-上面是nginx的基本配置，需要注意的有以下几点：
 
-1、几个常见配置项：
 
-1.$remote_addr 与 $http_x_forwarded_for 用以记录客户端的ip地址；
-
-2.$remote_user ：用来记录客户端用户名称；
-
-3.$time_local ： 用来记录访问时间与时区；
-
-4.$request ： 用来记录请求的url与http协议；
-
-5.$status ： 用来记录请求状态；成功是200；
-
-6.$body_bytes_s ent ：记录发送给客户端文件主体内容大小；
-
-7.$http_referer ：用来记录从那个页面链接访问过来的；
-
-8.$http_user_agent ：记录客户端浏览器的相关信息；
-
-2、惊群现象：一个网路连接到来，多个睡眠的进程被同时叫醒，但只有一个进程能获得链接，这样会影响系统性能。
-
-3、每个指令必须有分号结束。
-
-#### Nginx 反向代理与负载均衡详解
-
-**[详情](https://www.runoob.com/w3cnote/nginx-proxy-balancing.html)**
-
-## 部署本地服务器：
-
-1. 在一台电脑上搭建 ftp 服务器 （[教程](https://blog.csdn.net/theoneemperor/article/details/78851540)）
-2. 在此服务器上发布网站（[教程](https://blog.csdn.net/theoneemperor/article/details/78868838)）
-3. 远程到该电脑
-
-## 前端项目发布用于外网访问：（成功）
-
-***[详情](https://blog.csdn.net/u011295864/article/details/88103801)***
-
-***[端口映射](https://jingyan.baidu.com/article/1876c85260d1f6890a137675.html)***
-
-花生壳网址：`https://console.hsk.oray.com/forward`
-
-账号：`milu-de-ma-nong`
-
-密码：`qq2017234210`
-
-1. 配置项目主机 host 、 端口号port
-
-   - 配置主机、端口目标文件：`config\index.js`
-
-     修改为本机的 IP 地址（获取方法：DOS 窗口：`ipconfig`）
-
-     ![](demoPrtSc/Snipaste_2021-03-01_12-23-10.png)
-
-   - 配置好主机 IP 、端口后，重启该项目（先停止，然后`npm run dev`）
-
-     ![](demoPrtSc/Snipaste_2021-03-01_12-30-47.png)
-
-     这是修改后重启项目的显示信息
-
-2. 端口号在路由器中配置端口映射
-
-   ![](demoPrtSc/Snipaste_2021-03-01_12-26-06.png)
-
-   点击 ***操作*** -> ***编辑***
-
-   ![](demoPrtSc/Snipaste_2021-03-01_12-28-02.png)
-
-   修改完成，点击 ***确定***
-
-   ![](demoPrtSc/Snipaste_2021-03-01_12-29-08.png)
-
-   访问该地址即可
-
-## 项目详情：
-
-管理系统：
-
-> [人力资源管理系统](http://vhr.javaboy.org)
->
-> **https://github.com/lenve/vhr**
->
-> 
->
-> [电商后台管理系统](http://www.macrozheng.com/admin/#/home)（账号：admin，密码：macro123）
->
-> **https://github.com/macrozheng/mall-admin-web**
->
-> 
->
-> [XMall商城](http://xmadmin.exrick.cn/)
->
-> [XMall后台管理系统](http://xmadmin.exrick.cn/)（账号：test，密码：test）
->
-> **https://github.com/Exrick/xmall-front**
->
-> 
->
-> [商城框架系统](https://demo.careyshop.cn/admin/#/login)（账号：admin43，密码：admin888）
->
-> **https://github.com/dnyz520/careyshop-admin**
->
-> 
->
-> 小爱admin后台管理系统（账号：admin/editor，密码：123456/123456）
->
-> **https://github.com/wdlhao/vue2-element-touzi-admin.git**
->
-> 
->
-> [后台管理系统](https://el-admin.xin/components/echarts)
->
-> **https://github.com/elunez/eladmin-web.git**
->
-> 
->
-> [nx-admin](https://sdsdsy.gitee.io/nxadmin/#/dashboard/dashboard)
->
-> **https://github.com/mgbq/nx-admin.git**
-
-交流社区：
-
-> [新蜂商城](https://juejin.cn/)
->
-> **https://github.com/newbee-ltd/newbee-mall**
-
-可视化工具：
-
-> 低代码平台
->
-> 
->
-> [可视化布局](https://jaweii.github.io/Vue-Layout/dist/#/share/5993d3b05c497d0057c6f2da)
->
-> 
->
-> [可视化表单设计器](http://form.making.link/sample/#/zh-CN/)
->
-> **https://github.com/GavinZhuLei/vue-form-making**
-
-其它：
-
-> [海风小店](http://hiolabs.com/demo/#/dashboard/welcome)（账号：`hiolabs`，密码：`hiolabs`）
->
-> **https://github.com/iamdarcy/hioshop-admin**
->
-> 
->
-> [vue-admin-beautiful](http://vue-admin-beautiful.com/vue-admin-beautiful-element/?hmsr=github&hmpl=&hmcu=&hmkw=&hmci=)
->
-> **https://github.com/chuzhixin/vue-admin-beautiful?utm_source=gold_browser_extension**
->
-> 
->
-> 在线文档编辑器
->
-> 
->
-> vue源码逐行注释分析+40多m的vue源码程序流程图思维导图 
->
-> **https://github.com/qq281113270/vue**
-
-## 常见问题：
-
-1. git 提交时报`LF will be replaced by CRLF in`
-
-   - 问题：
-
-     > LF和CRLF其实都是换行符，但是不同的是，LF是linux和Unix系统的换行符，CRLF是window 系统的换行符。这就给跨平台的协作的项目带来了问题，保存文件到底是使用哪个标准呢？ git为了解决这个问题，提供了一个”换行符自动转换“的功能，并且这个功能是默认处于”自动模式“即开启状态的。
-     > 这个换行符自动转换会把自动把你代码里 与你当前操作系统不相同的换行的方式 转换成当前系统的换行方式（即LF和CRLF 之间的转换），这样一来，当你提交代码的时候，即使你没有修改过某个文件，也被git认为你修改过了，从而提示"LF will be replaced by CRLF in *****"
-
-   - 解决：
-
-     1. `git config core.autocrlf false`（仅对当前 git 仓库有效）
-     2. `git config --global core.autocrlf false` ( 全局有效）
-
-2. `default value for prop "list": Props with type Object/Array must use a factory function to return the default value.`
-
-   - 问题：props default 数组／对象的默认值应当由一个工厂函数返回
-
-   - 解决：
-
-     > list : {
-     >
-     > ​	type : Array , 
-     >
-     > ​	default: () => []
-     >
-     > }
-
-3. 

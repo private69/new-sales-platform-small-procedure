@@ -1,22 +1,18 @@
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import '@/global/css/index.css';
-import '@/plugins/elementUI'
-// import '@/plugins/museUI'
-import '@/plugins/install'
-// import '@/plugins/iview'
-import store from './store'
-import '@/plugins/echarts'
-import $ from 'jquery'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import ELEMENTUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ELEMENTUI)
 
-import bus from './global/js/bus'
+import '@/components/base/install'; // 注册基础组件
+import '@/components/global/install'; // 注册全局插件
 
-Vue.config.productionTip = false
-/* eslint-disable no-new */
+Vue.config.productionTip = false;
+
 new Vue({
-  el: '#app',
   router,
   store,
-  render: h => h(App)
-})
+  render: (h) => h(App),
+}).$mount('#app');

@@ -1,10 +1,16 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import state from './state'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+import font from './font';
+import music from './music';
+import project from './project';
 
-const store = new Vuex.Store({
-    state
-})
-export default store
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+  modules: {
+    font,
+    music,
+    project,
+  },
+});
