@@ -221,4 +221,7 @@ a {
     }
   }
 }
+.el-icon-user-solid:before{
+  font-size: 20px;
+}
 </style>
