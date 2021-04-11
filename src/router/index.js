@@ -10,6 +10,8 @@ import fontEdit from '@/pages/Manage/font/edit.vue';
 import musicList from '@/pages/Manage/music/list.vue';
 import musicEdit from '@/pages/Manage/music/edit.vue';
 
+import newGuideList from '@/pages/Manage/newGuide/list.vue'
+
 import projectList from '@/pages/Manage/project/list.vue';
 
 import about from '@/pages/Manage/about/index.vue';
@@ -51,7 +53,7 @@ const routes = [
       },
       {
         path: 'newGuide',
-        component: projectList
+        component: newGuideList
       },
       {
         path: 'about',
