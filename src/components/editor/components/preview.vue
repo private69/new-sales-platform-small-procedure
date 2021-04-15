@@ -59,7 +59,10 @@
           <div class="setting-item">
             <div class="sub-title">扫码分享<span class="desc">支持微信、QQ、浏览器等扫码</span></div>
             <div class="qrcode">
-              <qrcode-vue :size="130" :value="previewUrl"></qrcode-vue>
+              <qrcode-vue 
+              :size="130" 
+              :value="previewUrl"
+              ></qrcode-vue>
             </div>
           </div>
 
@@ -72,6 +75,7 @@
               <div class="btn-copy" @click="handleCopy">
                 复制链接
               </div>
+              <div class="btn-copy" @click="handledown">下载</div>
             </div>
           </div>
         </div>
@@ -143,6 +147,20 @@ export default {
     window.removeEventListener('message', this.handleMessage)
   },
   methods: {
+    handledown() {
+      //获取canvas标签
+      let canvas = document.getElementsByClassName('qrcode')[0].getElementsByTagName('canvas')
+      //创建a标签
+      let a = document.createElement('a')
+      //获取二维码的url并赋值为a.href
+      a.href = canvas[0].toDataURL('img/png')
+      //设置下载文件的名字
+      a.download = '二维码'
+      //点击事件，相当于下载
+      a.click()
+      //提示信息
+      this.$message.warn('下载中，请稍后...')
+    },
     handleChangeTab() {},
     handleCopy() {
       this.$copyText(this.previewUrl);
