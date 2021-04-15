@@ -2,6 +2,7 @@
   <div class="layout-home">
     <div class="menu-wrapper">
       <a
+        :id="menu.id"
         class="menu"
         v-for="menu in menus"
         :key="menu.url"
@@ -11,11 +12,14 @@
         <i :class="menu.icon"></i>
         {{ menu.title }}
       </a>
-
     </div>
     <div class="pages-wrapper">
       <header class="page-header">
-        <iframe src="https://ghbtns.com/github-btn.html?user=DESIGN-PORTAL&repo=DESIGNPORTAL&type=star&count=true&size=large" scrolling="0" frameborder="0"></iframe>
+        <iframe 
+        id="el-index__iframe"
+        src="https://ghbtns.com/github-btn.html?user=DESIGN-PORTAL&repo=DESIGNPORTAL&type=star&count=true&size=large" 
+        scrolling="0" 
+        frameborder="0"></iframe>
         <el-tooltip
         content="点击查看用户信息"
         effect="dark"
@@ -44,33 +48,38 @@ export default {
       currentMenu: null,
       menus: [
         {
+          id: 'manage-project',
           url: '/manage/project',
           title: '作品列表',
-          icon: 'el-icon-menu'
+          icon: 'el-icon-menu',
         },
         {
+          id: 'manage-font',
           url: '/manage/font',
           title: '字体列表',
-          icon: 'el-icon-notebook-2'
+          icon: 'el-icon-notebook-2',
         },
         // {
         //   url: '/manage/picture',
         //   title: '图片素材',
         // },
         {
+          id: 'manage-music',
           url: '/manage/music',
           title: '音乐素材',
-          icon: 'el-icon-service'
+          icon: 'el-icon-service',
         },
         {
+          id: 'manage-newGuide',
           url: '/manage/newGuide',
           title: '新手指引',
-          icon: 'el-icon-view'
+          icon: 'el-icon-view',
         },
         {
+          id: 'manage-about',
           url: '/manage/about',
           title: '关于项目',
-          icon: 'el-icon-info'
+          icon: 'el-icon-info',
         },
       ],
     };
@@ -127,7 +136,9 @@ a {
       font-size: 16px;
       box-sizing: border-box;
       user-select: none;
-      color: #ffffff;
+      // color: #ffffff;
+      color: #333;
+      z-index: 10;
       // overflow: hidden;
       &:not(:first-child) {
         margin-top: 20px;
@@ -220,5 +231,8 @@ a {
       overflow-y: auto;
     }
   }
+}
+.el-icon-user-solid:before{
+  font-size: 20px;
 }
 </style>
